@@ -1,12 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import twilio from "twilio";
 
-// Initialize Twilio client with your credentials
-// IMPORTANT: Replace these with your actual Twilio credentials in .env.local
-const accountSid =
-  process.env.TWILIO_ACCOUNT_SID || "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"; // Your Account SID from www.twilio.com/console
-const authToken = process.env.TWILIO_AUTH_TOKEN || "xxxxxxxxxxxxxxxxxxxxxxxxxx"; // Your Auth Token from www.twilio.com/console
-const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER || "+1234567890"; // Your Twilio phone number
+// Initialize Twilio client with your credentials from environment variables
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
 
 // Create Twilio client
 const client = twilio(accountSid, authToken);
